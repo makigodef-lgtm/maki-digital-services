@@ -1,94 +1,63 @@
-<!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="AFICN : formation francophone en marketing digital pour la RDC et l’international. Démonstration animée gratuite, préinscription sans paiement.">
-<title>AFICN | Formation au marketing digital</title>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AFICN : formation pratique francophone en marketing digital, basée à Kinshasa. Une leçon gratuite, un programme structuré et une préinscription sans paiement.">
+<meta name="theme-color" content="#112a39"><title>AFICN | Formation pratique en marketing digital</title>
 <style>
-:root{--navy:#0c1d39;--blue:#205bb3;--violet:#5840d6;--gold:#ffc759;--ink:#14213c;--muted:#58647a;--line:#dce4f4}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f8ff;color:var(--ink);font:16px/1.55 system-ui,Arial,sans-serif}
-a{color:inherit}header{background:var(--navy);color:#fff;padding:17px max(20px,calc((100vw - 1110px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.logo{font-weight:900;font-size:21px;letter-spacing:.4px}header small{display:block;color:#c6d2e8;font-size:11px}
-nav a{font-size:13px;text-decoration:none;margin-left:15px}
-main{max-width:1110px;margin:0 auto;padding:30px 18px 70px}
-.hero{background:linear-gradient(125deg,#101e3d,#253b76 65%,#5136aa);color:white;border-radius:23px;padding:36px;display:grid;grid-template-columns:1.02fr 1fr;gap:20px;overflow:hidden}
-.eyebrow{display:inline-block;background:#ffffff23;border-radius:50px;padding:6px 11px;font-size:13px;font-weight:700}
-h1{font-size:clamp(28px,4.6vw,47px);line-height:1.12;letter-spacing:-1.4px;margin:17px 0}h1 em{color:var(--gold);font-style:normal}
-.hero p{color:#e3ebfb;max-width:460px}
-.button{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;padding:13px 18px;border-radius:12px;font-size:15px;font-weight:750;text-decoration:none;background:var(--gold);color:#182342;gap:8px}
-.button.alt{background:var(--blue);color:white}.button.ghost{background:#e9eeff;color:#1a3874}
-.visual{position:relative;border-radius:19px;background:radial-gradient(circle at 60% 30%,#7292d8,#1a2e57 65%);min-height:300px;display:flex;align-items:end;justify-content:center;overflow:hidden}
-.visual:before,.visual:after{content:"";position:absolute;border:1px solid #ffffff3a;border-radius:50%;width:400px;height:400px;top:-130px;left:-80px;animation:orbit 16s linear infinite}.visual:after{width:280px;height:280px;top:20px;left:110px;animation-duration:11s}
-@keyframes orbit{to{transform:rotate(360deg)}}.avatar{height:min(340px,95%);z-index:1;width:100%;max-width:340px;animation:bob 3.2s ease-in-out infinite;filter:drop-shadow(0 13px 14px #0d1a3d80)}
-@keyframes bob{50%{transform:translateY(7px) rotate(.35deg)}}.face-mouth{transform-origin:center;animation:talk .35s ease-in-out infinite alternate;animation-play-state:paused}.talking .face-mouth{animation-play-state:running}
-@keyframes talk{to{transform:scaleY(1.75)}}.right-hand{transform-origin:255px 270px;animation:hand 2.6s ease-in-out infinite}
-@keyframes hand{0%,100%{transform:rotate(0)}50%{transform:rotate(-10deg)}}
-.clip-label{position:absolute;bottom:14px;left:14px;z-index:3;background:#081a35d9;padding:8px 12px;border:1px solid #ffffff3c;border-radius:9px;color:white;font-weight:700;font-size:12px}
-.sectionhead{margin:37px 0 16px}.sectionhead h2{margin:0;font-size:26px;letter-spacing:-.5px}.sectionhead p{color:var(--muted);margin:4px 0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 4px 24px #16234709}
-.lesson-stage{border-radius:14px;min-height:255px;background:linear-gradient(135deg,#13264b,#223f79);color:white;padding:27px;position:relative;overflow:hidden}
-.lesson-stage:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff20;border-radius:50%;right:-85px;top:-70px;pointer-events:none}
-.kicker{font-size:12px;text-transform:uppercase;letter-spacing:1.1px;font-weight:800;color:#ffd776}
-.lesson-stage h3{font-size:clamp(21px,3vw,29px);line-height:1.2;margin:15px 0}
-.lesson-stage p{font-size:17px;color:#e9f0ff;max-width:90%}.lesson-stage>div{position:relative;z-index:1}
-.progress{height:7px;background:#d7dff2;border-radius:9px;overflow:hidden;margin:18px 0}.progress i{display:block;height:100%;background:var(--blue);width:0;transition:width .3s}
-.actions{display:flex;flex-wrap:wrap;gap:9px}.status{font-size:13px;color:var(--muted);min-height:25px;margin:12px 0 0}
-.tag{font-size:12px;background:#eef2ff;color:#3656a1;padding:5px 10px;border-radius:50px;font-weight:700}
-.module{margin:13px 0 0;border:1px solid #dce4f4;border-radius:13px;padding:12px 16px;background:white}
-.module h3{font-size:16px;margin:0 0 8px}.module ol{margin:0;padding-left:22px}
-.module li{padding:5px 0;color:#44536e}.module li span{font-size:11px;color:#805100;margin-left:7px}
-.note{background:#fff8e8;border:1px solid #f1d59c;border-radius:12px;padding:16px 18px;color:#5c481e;margin-top:20px}
-footer{text-align:center;color:#69758b;font-size:13px;padding:28px}
-@media(max-width:700px){.hero,.grid{grid-template-columns:1fr}.hero{padding:22px}.visual{min-height:240px}.avatar{height:270px}nav a{margin-left:9px}.card{padding:17px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+:root{--forest:#112e37;--forest2:#183e46;--gold:#dba85f;--paper:#f7f6f1;--card:#fff;--ink:#132b34;--muted:#59656a;--line:#e3e5df}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}
+header{background:var(--forest);color:white;border-bottom:1px solid #ffffff20}.topbar{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-top:18px;padding-bottom:18px}
+.brand{font-size:26px;font-weight:900;letter-spacing:2px}.brand small{display:block;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:500;color:#b9c9c8}
+nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}nav a{font-size:13px;font-weight:650;color:#e8efed}nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.hero{background:var(--forest);color:white;overflow:hidden}.heroInner{display:grid;grid-template-columns:1.05fr .95fr;min-height:575px;gap:55px;align-items:center;padding-top:60px;padding-bottom:68px}
+.eyebrow{font-size:12px;font-weight:850;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3,p{margin-top:0}h1{font-family:Georgia,serif;font-size:clamp(42px,5.5vw,72px);line-height:1.08;letter-spacing:-2px;margin:22px 0}h1 em{font-weight:400;color:#e9b36b;font-style:italic}
+.hero p{font-size:18px;color:#d3e0df;max-width:560px}.small{font-size:13px!important;color:#bbcfca!important;margin-top:16px}
+.btn{border-radius:5px;display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#172e36;font-size:14px;font-weight:850;letter-spacing:.3px;padding:15px 24px;border:none;cursor:pointer;box-shadow:0 6px 15px #00000012}
+.btn:hover{filter:brightness(1.03);transform:translateY(-1px)}.btn.outline{background:transparent;color:white;border:1px solid #ffffff80}
+.heroPicture{position:relative}.heroPicture img{width:100%;height:455px;object-fit:cover;object-position:center 35%;border-radius:150px 150px 10px 10px;filter:saturate(.89)}.heroPicture:after{content:"";position:absolute;right:-18px;bottom:-20px;width:150px;height:150px;border:1px solid #c49e69;border-radius:50%;pointer-events:none}
+.heroCaption{position:absolute;left:-30px;bottom:22px;background:white;color:var(--ink);padding:17px 22px;font-family:Georgia,serif;font-size:17px;box-shadow:0 16px 40px #0003;max-width:225px}
+.section{padding-top:90px;padding-bottom:90px}.sectionHead{max-width:730px;margin-bottom:35px}h2{font:normal clamp(31px,4vw,46px)/1.17 Georgia,serif;letter-spacing:-.5px;margin:13px 0 17px}.lead{color:var(--muted);font-size:17px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pillar{border-top:2px solid var(--gold);padding:26px;background:white;box-shadow:0 4px 22px #142a3610}
+.pillar small{font-size:13px;font-weight:850;color:#8f6832}.pillar h3{font-size:19px;margin:14px 0 8px}.pillar p{color:var(--muted);font-size:14px;margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.split>img{width:100%;height:440px;object-fit:cover;border-radius:6px}
+.modules{display:grid;gap:12px}.module{border-bottom:1px solid var(--line);display:flex;gap:20px;padding:18px 0}.module span{font-weight:850;color:#b1813e}.module h3{font-size:17px;margin:0 0 4px}.module p{color:var(--muted);font-size:14px;margin:0}
+.lessonSection{background:#ecf0eb}.lessonCard{max-width:820px;background:white;border:1px solid #dce2dc;border-radius:10px;padding:35px;box-shadow:0 15px 38px #19343c12}
+.step-number{font-size:12px;font-weight:900;letter-spacing:2px;color:#b1813e}.lesson-step h3{font:normal 31px Georgia,serif;margin:15px 0}.lesson-step p{font-size:17px;line-height:1.8;min-height:100px}
+.lessonControls{display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-top:22px}.lessonControls button{background:var(--forest);color:#fff;border:none;border-radius:5px;padding:12px 23px;font-size:14px;font-weight:750;cursor:pointer}.lessonControls button:hover{background:var(--forest2)}.lessonControls button.secondary{background:#e3e9e5;color:var(--forest)}
+.progress{height:5px;background:#e8ece8;margin-top:26px;border-radius:9px;overflow:hidden}.progress>span{display:block;height:100%;width:25%;background:var(--gold);transition:width .25s}
+.exercise{margin-top:22px;padding:22px;background:#f4f0e7;border-left:3px solid #bf8a40;font-size:15px}.exercise strong{display:block;font-size:12px;letter-spacing:1.2px;margin-bottom:6px}
+.payment{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:stretch}
+.paymentArticle{background:var(--forest);padding:40px;color:white;border-radius:7px}.paymentArticle h2{margin-top:12px}.paymentArticle p{color:#d9e3e1}
+.pricePanel{padding:34px;background:white;border:1px solid #dde4dd;border-radius:7px;display:flex;flex-direction:column;justify-content:center}.pricePanel .amount{font:normal 50px Georgia,serif;margin:12px 0}.status{color:#9a492c;font-weight:800;font-size:13px;background:#fff2e9;padding:12px 14px;border-radius:4px;margin:18px 0}.note{font-size:13px;color:var(--muted);margin-top:15px}
+#payButton[hidden],#payNote[hidden]{display:none}#payButton{background:var(--forest);color:white;text-align:center}
+.contact{background:#f0eadb;text-align:center;padding:70px 24px}.contact h2{max-width:650px;margin:10px auto 15px}.contact p{max-width:650px;margin:0 auto 27px;color:var(--muted)}
+footer{background:#102b33;color:#d8e3e0;padding:32px 0;font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){.heroInner,.split,.payment{grid-template-columns:1fr}.heroInner{gap:30px;padding-top:35px}.heroPicture{max-width:580px;margin:auto;width:100%}.heroPicture img{height:390px}.pillars{grid-template-columns:1fr}.split>img{height:320px}}
+@media(max-width:600px){.wrap{padding:0 18px}.topbar{align-items:start;flex-direction:column;gap:12px}nav{gap:14px}nav a{font-size:12px}.heroInner{padding-bottom:50px}h1{font-size:43px}.hero p{font-size:16px}.heroCaption{left:0;bottom:15px;padding:13px;font-size:14px}.heroPicture img{height:330px}.section{padding-top:58px;padding-bottom:58px}.lessonCard{padding:23px}.lesson-step p{min-height:140px}.paymentArticle,.pricePanel{padding:25px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style></head><body>
-<header><div><div class="logo">🎓 AFICN</div><small>Académie Francophone Internationale des Compétences Numériques</small></div><nav><a href="#demonstration">Démonstration</a><a href="#programme">Programme</a><a href="#contact">Contact</a><a href="en.html" lang="en">🇬🇧 English</a></nav></header>
-<main><section class="hero"><div><span class="eyebrow">🌍 RDC & international • Formation francophone • Débutants</span><h1>Apprendre le <em>marketing digital</em>, puis agir.</h1><p>Comprendre vos clients, bâtir une offre crédible, communiquer efficacement et mesurer vos résultats. Des exemples concrets utiles en RDC, en Afrique et à l’international.</p><a class="button" href="#demonstration">▶ Tester la leçon animée</a><p style="font-size:12px">Cette démonstration gratuite fonctionne sans abonnement. Public en RDC et dans le monde. Préinscriptions ouvertes : aucun paiement encaissé.</p></div>
-<div class="visual" id="visual"><svg class="avatar" viewBox="0 0 360 340" role="img" aria-label="Illustration animée d'un formateur virtuel, et non une vidéo humaine">
-<ellipse cx="180" cy="333" rx="110" ry="7" fill="#000" opacity=".18"/>
-<path d="M76 340 L85 246 Q102 210 148 212 L212 212 Q254 211 270 246 L284 340Z" fill="#192d53"/>
-<path d="M149 216 L178 289 L211 216" fill="#f5f7fe"/><path d="M177 271 L189 274 L182 324 L169 322 Z" fill="#d29b48"/>
-<path d="M145 212 L173 268 L157 286 L136 259Z" fill="#2e4d83"/><path d="M216 213 L186 268 L202 286 L224 259Z" fill="#2e4d83"/>
-<path d="M128 104 Q120 63 171 50 Q228 48 233 102 L231 161 Q221 195 181 201 Q136 195 127 158Z" fill="#935d41"/>
-<ellipse cx="124" cy="143" rx="12" ry="20" fill="#8e573d"/><ellipse cx="236" cy="143" rx="12" ry="20" fill="#8e573d"/>
-<path d="M125 115 Q103 42 170 32 Q233 23 241 91 L237 120 Q221 98 207 80 Q153 109 126 115Z" fill="#172034"/>
-<ellipse cx="154" cy="134" rx="5" ry="6" fill="#102034"/><ellipse cx="207" cy="134" rx="5" ry="6" fill="#102034"/>
-<path d="M161 156 Q183 167 202 156" stroke="#5a3527" stroke-width="3" fill="none"/>
-<ellipse class="face-mouth" cx="181" cy="174" rx="16" ry="5.5" fill="#502c2c"/>
-<g class="right-hand"><path d="M260 246 Q284 233 301 212 Q315 192 325 205 Q332 222 309 243 L270 291Z" fill="#f1f4fd"/><ellipse cx="322" cy="205" rx="14" ry="17" fill="#9b6446"/></g>
-<path d="M100 249 Q70 259 61 292 L92 302 L120 272Z" fill="#2e4d83"/>
-</svg><div class="clip-label">Formateur virtuel illustré • démonstration</div></div></section>
-<section class="card" id="international" style="margin-top:20px"><div class="tag">🌍 AFICN • RDC + international</div><h2>Une académie accessible au-delà des frontières</h2><div class="grid"><div><h3>Pour les apprenants en RDC</h3><p>La formation sera commercialisée avec des moyens de paiement adaptés au pays : Mobile Money et, après vérification du prestataire, carte bancaire. L’affichage du prix en francs congolais dépendra du taux et des frais appliqués au moment de l’achat.</p></div><div><h3>Pour les apprenants à l’international</h3><p>Prix de référence : <strong>10 USD</strong>. Nous préparons l’acceptation de cartes bancaires internationales et un accès aux cours depuis l’étranger. Les pays et moyens effectivement couverts seront annoncés après les tests du service de paiement.</p><p lang="en"><strong>International learners:</strong> French-language digital marketing course. International card checkout is not active yet.</p></div></div><p class="status"><strong>Statut vérifié :</strong> la démonstration est accessible ; ni les paiements locaux ni les paiements internationaux ne sont encore activés. Aucun achat ne doit être tenté avant validation de la livraison automatique.</p></section><div class="sectionhead" id="demonstration"><h2>Leçon 1 : le marketing digital, sans confusion</h2><p>Présentation animée avec narration française de votre appareil, exemples et mini-exercice.</p></div>
-<div class="grid"><section class="card"><div class="lesson-stage" id="stage" aria-live="polite"><div><div class="kicker" id="sceneStep">Leçon gratuite • 1 sur 6</div><h3 id="sceneTitle">Bienvenue à l'AFICN</h3><p id="sceneText">Cliquez sur « Écouter et animer » pour démarrer la leçon.</p></div></div><div class="progress"><i id="bar"></i></div>
-<div class="actions"><button class="button alt" id="start">▶ Écouter et animer</button><button class="button ghost" id="next">Étape suivante →</button><button class="button ghost" id="stop">■ Arrêter</button></div><div class="status" id="state" aria-live="polite">Le son utilise les voix françaises disponibles dans votre navigateur. Activez le volume du téléphone.</div></section>
-<section class="card"><div class="tag">Formation prévue • 4 modules • 12 leçons</div><h2>Ce que vous allez apprendre</h2><p>Le cours évite les recettes miracles. Il enseigne une méthode mesurable : problème du client, proposition de valeur, canal pertinent, action et bilan.</p>
-<p><strong>Exercice gratuit :</strong> choisissez un commerce local. En trois phrases, indiquez son client, le besoin réel et la promesse de l'offre.</p>
-<p><strong>Point pédagogique :</strong> 100 vues ne signifient pas 100 clients. Il faut distinguer visibilité, demandes et achats.</p>
-<div class="note"><strong>Transparence commerciale :</strong> aucun règlement en ligne n'est encore possible. L'accès automatique payant sera proposé seulement après finalisation des contenus et contrôle d'un paiement test réel.</div></section></div>
-<div class="sectionhead" id="programme"><h2>Parcours de formation</h2><p>Programme pédagogique détaillé. Les leçons payantes restent fermées tant que la livraison automatique n'est pas opérationnelle.</p></div>
-<div class="grid" id="modules"></div>
-<section class="card" id="contact" style="margin-top:20px"><h2>Préinscription sans paiement</h2><p>Tarif de référence envisagé : <strong>10 USD</strong> pour le programme complet, lorsqu'il sera disponible, en RDC comme à l’international. Des frais et conversions peuvent s’appliquer selon le mode de paiement. La préinscription ne vaut pas achat ni réservation garantie.</p><a class="button alt" href="mailto:makigodef@gmail.com?subject=Demande%20d%27information%20AFICN">Écrire à l'AFICN</a></section>
-</main><footer>© AFICN • Kinshasa • Projet de formation francophone • Démonstration en cours d'amélioration</footer>
+<header><div class="wrap topbar"><a href="#top" class="brand">AFICN<small>Académie numérique · Kinshasa</small></a><nav><a href="#methode">Méthode</a><a href="#programme">Programme</a><a href="#lecon">Leçon gratuite</a><a href="#inscription">Inscription</a><a href="en.html" hreflang="en">EN · English</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap heroInner"><div><span class="eyebrow">KINSHASA · FORMATION EN LIGNE</span><h1>Apprendre le marketing digital. <em>Le pratiquer vraiment.</em></h1><p>Une formation francophone qui part des besoins réels des clients et vous apprend à concevoir une offre, communiquer efficacement et mesurer vos résultats.</p><a class="btn" href="#lecon">Essayer la leçon gratuite</a><p class="small">Une pédagogie claire, sans promesse de gains rapides.</p></div><div class="heroPicture"><img src="https://images.pexels.com/photos/5905839/pexels-photo-5905839.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Photographie d'une professionnelle travaillant sur un ordinateur portable" width="900" height="720" fetchpriority="high"><div class="heroCaption">Apprendre, pratiquer et progresser.</div></div></div></section>
+<section class="section wrap" id="methode"><div class="sectionHead"><div class="eyebrow">UNE PÉDAGOGIE CONCRÈTE</div><h2>Moins de spectacles. Plus de compétences.</h2><p class="lead">Nous préparons un parcours destiné aux débutants, aux entrepreneurs et aux professionnels. Chaque notion doit déboucher sur une application concrète.</p></div><div class="pillars"><article class="pillar"><small>01</small><h3>Comprendre le client</h3><p>Identifier les besoins, les objections et la véritable utilité d'une offre.</p></article><article class="pillar"><small>02</small><h3>Produire avec méthode</h3><p>Rédiger des messages justes et choisir des canaux adaptés.</p></article><article class="pillar"><small>03</small><h3>Mesurer les résultats</h3><p>Différencier audience, demandes, commandes et satisfaction.</p></article></div></section>
+<section class="section wrap split" id="programme"><img loading="lazy" src="https://images.pexels.com/photos/3862094/pexels-photo-3862094.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Professionnels travaillant ensemble sur un projet numérique" width="900" height="640"><div><div class="eyebrow">VOTRE PARCOURS</div><h2>Quatre modules, une progression logique.</h2><p class="lead">Les contenus complets sont en préparation. L'aperçu gratuit vous permet déjà de découvrir la méthode.</p><div class="modules"><article class="module"><span>01</span><div><h3>Comprendre le marketing digital</h3><p>Public cible, problème réel, proposition de valeur.</p></div></article><article class="module"><span>02</span><div><h3>Développer sa présence numérique</h3><p>WhatsApp Business, réseaux sociaux, création de visuels.</p></div></article><article class="module"><span>03</span><div><h3>Communiquer et convertir</h3><p>Messages commerciaux, campagnes, suivi des résultats.</p></div></article><article class="module"><span>04</span><div><h3>Lancer un service</h3><p>Construction de l'offre, prix, prospection, projet client.</p></div></article></div></div></section>
+<section class="section lessonSection" id="lecon"><div class="wrap"><div class="sectionHead"><div class="eyebrow">APERÇU PÉDAGOGIQUE</div><h2>Une leçon utile, sans voix artificielle.</h2><p class="lead">Une microleçon à parcourir à votre rythme. Il ne s'agit pas d'une vidéo filmée : aucune voix synthétique ne remplace un formateur humain.</p></div><div class="lessonCard"><div id="stepHolder"><article class="lesson-step" data-lesson-step hidden><span class="step-number">01 / 04</span><h3>Partir du besoin</h3><p>Une publication n'a de valeur commerciale que si elle répond à un besoin réel. Avant de choisir Facebook, TikTok ou WhatsApp, définissez votre client.</p></article><article class="lesson-step" data-lesson-step hidden><span class="step-number">02 / 04</span><h3>Définir sa cible</h3><p>Imaginons une couturière à Kinshasa. Sa cible peut être une personne recherchant une tenue sur mesure avant un événement précis.</p></article><article class="lesson-step" data-lesson-step hidden><span class="step-number">03 / 04</span><h3>Formuler une offre claire</h3><p>Elle montre une réalisation authentique, précise le délai, explique les conditions et indique comment demander un devis.</p></article><article class="lesson-step" data-lesson-step hidden><span class="step-number">04 / 04</span><h3>Évaluer sans se tromper</h3><p>Cent vues ne signifient pas cent clients. On distingue les personnes intéressées, les demandes de devis et les commandes effectivement réalisées.</p></article></div><div class="progress" aria-hidden="true"><span id="progressFill"></span></div><div class="lessonControls"><button id="nextStep" type="button">Continuer</button><button id="restart" type="button" class="secondary">Recommencer</button></div><div class="exercise"><strong>EXERCICE À FAIRE</strong>Choisissez une activité, puis écrivez trois phrases : pour qui ? Quel besoin ? Quelle solution réaliste ?</div></div><p class="note">Photographies d'illustration : les personnes représentées ne sont pas présentées comme les formateurs ou les étudiants de l'AFICN.</p></div></section>
+<section class="section wrap payment" id="inscription"><div class="paymentArticle"><div class="eyebrow">INSCRIPTION &amp; PAIEMENT</div><h2>Un paiement sécurisé, jamais improvisé.</h2><p>Le programme complet n'est pas encore ouvert à l'achat. Les encaissements par Mobile Money ou carte bancaire seront proposés uniquement après validation d'un compte marchand, test du parcours de paiement et vérification de l'accès aux cours.</p></div><div class="pricePanel"><div class="eyebrow">Tarif indicatif du programme complet</div><div class="amount">10 USD</div><div id="notReady" class="status" role="status">Paiement non activé • Aucune somme à envoyer</div><a id="payButton" class="btn" hidden rel="noopener noreferrer" target="_blank">Payer de manière sécurisée</a><p id="payNote" class="note" hidden>Paiement opéré sur le site sécurisé du prestataire. Les frais éventuels sont affichés avant validation.</p><p class="note">Photographies d'illustration : les personnes représentées ne sont pas présentées comme les formateurs ou les étudiants de l'AFICN.</p></div></section>
+<section class="contact" id="contact"><div class="eyebrow">Inscription</div><h2>Demandez les modalités d'inscription</h2><p>Contactez l'AFICN pour être informé de l'ouverture de la formation. Aucun règlement n'est demandé pendant cette étape.</p><a class="btn" href="mailto:makigodef@gmail.com?subject=Informations%20sur%20la%20formation%20AFICN">Contacter l'AFICN</a></section>
+</main><footer><div class="wrap"><div>AFICN • Projet de formation numérique • Kinshasa, RDC</div><div>Photos d'illustration provenant de Pexels, sans partenariat avec les personnes représentées.</div></div></footer>
 <script>
-const scenes=[
-["Bienvenue à l'AFICN","Bonjour et bienvenue à l'Académie Francophone Internationale des Compétences Numériques. Dans cette initiation, nous allons apprendre à distinguer les simples vues des véritables résultats commerciaux."],
-["Qu'est-ce que le marketing digital ?","Le marketing digital consiste à comprendre un public et à lui proposer une solution utile, à travers des canaux numériques. Il ne se réduit ni à publier des photos ni à accumuler des abonnés."],
-["Commencez par le client","Avant de publier, posez-vous trois questions : qui voulez-vous aider ? Quel problème rencontre cette personne ? Et pourquoi choisirait-elle votre offre plutôt qu'une autre ?"],
-["Un exemple à Kinshasa","Une couturière peut présenter des vêtements sur WhatsApp Business. Mais son objectif n'est pas seulement de recevoir des mentions j'aime. Elle veut des demandes précises, des commandes et des clients satisfaits."],
-["Mesurer une campagne","Imaginons 100 visiteurs, 12 demandes d'information et 3 ventes. Le taux de conversion en ventes est de 3 pour cent. Cette mesure est plus informative que le nombre de vues, à elle seule."],
-["À vous de pratiquer","Choisissez une activité. Nommez un type de client, décrivez son problème et formulez une promesse réaliste en une phrase. Votre premier pas en marketing est de rendre votre proposition claire et vérifiable."]
-];
-const list=[
-["Comprendre le marketing numérique",["Les fondamentaux du marketing digital","Identifier ses clients et leurs besoins","Construire une offre commerciale"]],
-["Créer une présence professionnelle",["Utiliser WhatsApp Business","Développer Facebook et Instagram","Créer des visuels avec Canva"]],
-["Attirer et convertir",["Rédiger des messages commerciaux","Concevoir une campagne publicitaire","Mesurer ses résultats"]],
-["Lancer son activité",["Choisir un service numérique à vendre","Fixer ses prix et prospecter","Réaliser son premier projet client"]]
-];
-let idx=0,playing=false;const q=s=>document.querySelector(s);
-q("#modules").innerHTML=list.map((m,i)=>'<section class="module"><h3>Module '+(i+1)+' · '+m[0]+'</h3><ol>'+m[1].map((l,j)=>'<li>'+l+' <span>'+(i===0&&j===0?'Aperçu gratuit':'Accès payant non activé')+'</span></li>').join('')+'</ol></section>').join("");
-function show(i){idx=(i+scenes.length)%scenes.length;q("#sceneStep").textContent="Leçon gratuite • "+(idx+1)+" sur "+scenes.length;q("#sceneTitle").textContent=scenes[idx][0];q("#sceneText").textContent=scenes[idx][1];q("#bar").style.width=((idx+1)/scenes.length*100)+"%";}
-function stop(){playing=false;q("#visual").classList.remove("talking");if("speechSynthesis" in window) speechSynthesis.cancel();q("#state").textContent="Lecture arrêtée. Vous pouvez recommencer."}
-function say(){if(!("speechSynthesis" in window)){q("#state").textContent="La lecture vocale n'est pas prise en charge par ce navigateur. Le texte reste lisible.";return;}speechSynthesis.cancel();playing=true;const u=new SpeechSynthesisUtterance(scenes[idx][1]);u.lang="fr-FR";u.rate=.90;u.pitch=1;const fr=speechSynthesis.getVoices().filter(x=>x.lang.toLowerCase().startsWith("fr"));if(fr.length)u.voice=fr.find(x=>x.localService)||fr[0];u.onstart=()=>{q("#visual").classList.add("talking");q("#state").textContent="Narration en cours • étape "+(idx+1)+"/"+scenes.length};u.onerror=()=>{playing=false;q("#visual").classList.remove("talking");q("#state").textContent="Audio indisponible sur cet appareil : vérifiez le son et la synthèse vocale."};u.onend=()=>{q("#visual").classList.remove("talking");if(playing&&idx<scenes.length-1){show(idx+1);setTimeout(say,300)}else{playing=false;q("#state").textContent="Démonstration terminée. Vous pouvez la réécouter."}};speechSynthesis.speak(u)}
-q("#start").addEventListener("click",()=>{stop();show(0);say()});
-q("#next").addEventListener("click",()=>{stop();show(idx+1);say()});
-q("#stop").addEventListener("click",stop);show(0);
-if("speechSynthesis" in window) speechSynthesis.getVoices();
+"use strict";
+(function(){
+const steps=[...document.querySelectorAll('[data-lesson-step]')];let index=0;
+function show(){steps.forEach((el,i)=>{el.hidden=i!==index;});document.getElementById('progressFill').style.width=(100*(index+1)/steps.length)+'%';}
+document.getElementById('nextStep').addEventListener('click',()=>{index=(index+1)%steps.length;show();});
+document.getElementById('restart').addEventListener('click',()=>{index=0;show();});show();
+/* Merchant configuration: paste ONLY a verified public CinetPay Payment Link here after KYC, delivery testing and checkout testing. NEVER paste API keys in HTML. */
+const MERCHANT_PAYMENT_LINK='';
+try{if(MERCHANT_PAYMENT_LINK){const u=new URL(MERCHANT_PAYMENT_LINK);const ok=u.protocol==='https:'&&(u.hostname==='link.cinetpay.com'||u.hostname==='secure.cinetpay.net'||u.hostname.endsWith('.cinetpay.com'));if(ok){const a=document.getElementById('payButton');a.href=u.href;a.hidden=false;document.getElementById('payNote').hidden=false;document.getElementById('notReady').hidden=true;}}}catch(e){}
+})();
 </script></body></html>
