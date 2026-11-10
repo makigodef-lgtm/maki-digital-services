@@ -1,0 +1,24 @@
+{
+  "id": "/maki-digital-services/mineralink/",
+  "name": "MineraLink RDC — Approvisionnement industriel",
+  "short_name": "MineraLink",
+  "description": "Demandes de devis industriels, veille des opportunités et fournisseurs en RDC.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f5",
+  "theme_color": "#12353c",
+  "lang": "fr",
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}
