@@ -1,0 +1,43 @@
+name: Publish AFICN and MineraLink static pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'en.html'
+      - 'mineralink/**'
+      - '.github/workflows/publish-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: public-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build public static files only
+        run: |
+          mkdir -p _site/mineralink
+          cp index.html en.html _site/
+          cp -R mineralink/. _site/mineralink/
+          touch _site/.nojekyll
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
