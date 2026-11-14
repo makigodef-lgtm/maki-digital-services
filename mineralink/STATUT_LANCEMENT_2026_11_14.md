@@ -2,6 +2,15 @@
 
 **Mode actuel : pilote technique et prospection sans encaissement en ligne.** Le site est publié et l'installation PWA ne demande aucun compte développeur payant. L'utilisateur ne doit pas être invité à effectuer des paiements via un prestataire tant que les autorisations ne sont pas accordées.
 
+## Correctif opérationnel : déclaration gratuite et site pilote sans compte (14/11/2026)
+
+- **Échec de distribution identifié** : les courriels à contact@eguce.net ont été rejetés (adresse introuvable) ; ne plus utiliser ce destinataire. Les adresses de contact **guce@guichetunique.cd** (ANAPI, contact officiel GUCE) et **info@economie.gouv.cd** (ministère de l'Économie, page de formalisation) ont été utilisées conjointement dans une demande spécifique de déclaration OHADA d'« entreprenant ». Envoi confirmé par Gmail ; réception par l'administration / réponse non confirmées.
+- **Question exacte posée** : savoir si l'activité numérique de mise en relation de MineraLink entre sous le régime de déclaration gratuite de l'article 62 de l'AUDCG, identifier le formulaire réellement applicable, le greffe ou guichet compétent et la reprise du formulaire du ministère déjà déposé sans doublon. Demande des pièces/frais supplémentaires et des autorisations numériques séparées.
+- **Site mis à jour** : CTA principal acheteur -> demande-rfq.html et fournisseur -> fournisseurs.html ; guide « commencer » mis à jour ; inscription et espace sécurisé deviennent facultatifs. Le formulaire prépare un email sur l'appareil de l'utilisateur et nécessite sa confirmation manuelle. Pas de paiement, pas de réception automatique de fonds.
+- **Vérification** : workflow de déploiement GitHub Pages et contrôles statiques réussis sur le commit 6a6058796bbb0176d8a5df59b81fb3c067cf43cf.
+- **Contact de secours documenté** : WhatsApp du ministère de l'Économie +243 842 358 865 (information publiée sur la page officielle de formalisation), assistance GUCE +243 822 284 008 (ANAPI). Ne pas payer un lien envoyé spontanément.
+- **Limites** : déclaration OHADA « sans frais » ≠ absence de frais éventuels pour certificats de résidence, casier judiciaire, impôts ou activités numériques. Le droit numérique 2026 peut imposer déclaration ou autorisation ; ARSP et CinetPay doivent clarifier l'éligibilité et leurs documents. Il est impossible de garantir une exploitation rémunérée sans toutes formalités.
+
 ## Dernière vérification technique du 14 novembre 2026
 
 - Répertoire fournisseur à adhésion volontaire créé dans Supabase et relié à l'espace client ; politiques d'accès testées (consultation, retrait, refus de modifier une fiche par un tiers).
