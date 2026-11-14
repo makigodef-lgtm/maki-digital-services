@@ -24,6 +24,24 @@
 
 **Conduite pratique sans dépense** : maintenir l'application comme démonstration et moyen de prospection ; demander au GUCE l'orientation vers la déclaration gratuite « entreprenant » au lieu d'une immatriculation classique ; ne commencer des facturations régulières qu'après réception de la preuve de statut et vérification des obligations fiscales et numériques ; ne pas centraliser de fonds destinés aux entreprises partenaires. Aucun emprunt de RCCM ni faux numéro.
 
+## Complément juridique vérifié le 14 novembre 2026 : modèle individuel durable
+
+**Objectif :** maintenir le pilote public et rechercher des partenaires, sans recevoir de commissions ni de fonds de tiers tant que le statut et les autorisations applicables ne sont pas confirmés.
+
+**1. Statut OHADA « entreprenant »** : le portail officiel [RCCM-OHADA](https://rccm.ohada.org/staticPage/index?alias=se) précise qu'une déclaration **sans frais** est possible auprès du greffe ou de l'organe compétent. Il faut réunir identité, adresse d'activité, description exacte, document d'identité, déclaration sur l'honneur de non-interdiction, certificat de résidence et, s'il y a lieu, justificatif matrimonial et autorisation professionnelle. L'extrait de casier judiciaire doit être ajouté dans les conditions et délais prévus par le texte. **La réception du numéro de déclaration** est nécessaire avant d'exercer régulièrement sous ce statut. Il n'est pas équivalent au RCCM ordinaire. Ce statut implique un livre de recettes/dépenses et des limites de chiffre d'affaires.
+
+**2. Guichet unique à Kinshasa** : selon l'[ANAPI](https://www.investindrc.cd/fr/Procedure-generale-de-creation-d-entreprise), il est établi au **482, avenue de la Science, Gombe, Kinshasa**. La procédure classique d'établissement individuel est indiquée à 30 USD. **Ne pas confondre** ce montant avec la déclaration d'entreprenant OHADA, explicitement gratuite. Le dépôt initial au ministère de l'Économie doit être retrouvé avant toute seconde demande.
+
+**3. Secteur numérique, nouvelles règles de 2026** : le ministère de l'Économie numérique a annoncé les [arrêtés du 11 mars 2026 sur les déclarations](https://economienumerique.gouv.cd/news-en-details/eyJpdiI6IklHSmJndlZ6clZhMTA0aDNrL0N4TFE9PSIsInZhbHVlIjoiYWRsZnYxNDlMbktBU1hxT2UyOStyUT09IiwibWFjIjoiNzIyMjZlZjU4Yzg5ZjQ5Nzk2YzBjMTExMTkxYzcwMWM0ZjQ1MDQxYTQxMDc3ZWU2ZGQ1MzcxMTc4NzgwYWEzMCIsInRhZyI6IiJ9) et [les autorisations de plateformes](https://economienumerique.gouv.cd/news-en-details/eyJpdiI6IlFUTnJJc2NWWFVER3Fpc3d4MDk0aFE9PSIsInZhbHVlIjoiVWVXS2lBa0dJZEhpcU1CVnA5eWpwUT09IiwibWFjIjoiMmQ3ZWNlNzM2YjM5ZWY0NTUzZmM4MWY1M2UxMzI3NzljNzE4ZWIxNDVlNWRhMmUwOTVmNjM1NGY4ZDk4ZWYxZSIsInRhZyI6IiJ9). La qualification de MineraLink comme simple application issue d'une startup ou comme marketplace à autoriser est **non tranchée**.
+
+**4. ARSP** : le [guide officiel des opérations de sous-traitance](https://arsp.cd/wp-content/uploads/2024/12/GS-compresed.pdf), secteur commerce, inclut potentiellement une intermédiation commerciale **en cas d'externalisation** dans le champ de la sous-traitance. Une plateforme B2B n'est pas automatiquement dispensée. Le projet ne doit pas facturer de mandat de courtage industriel avant clarification applicable.
+
+**5. Paiements** : CinetPay a confirmé par courriel qu'un compte marchand RDC exige l'adossement à une activité légalement constituée. Son [annexe sur les personnes physiques](https://cinetpay.com/legal/cgu-services) ne garantit pas une activation sur pièce d'identité seule en RDC. La question du numéro de déclaration d'entreprenant comme alternative a été transmise. **Ne pas encaisser avant habilitation et vérification KYC.**
+
+**6. Actions accomplies** : courriels de demande de qualification envoyés le 14/11/2026 à info@economienumerique.gouv.cd (déclaration ou autorisation et frais) et contact@arsp.cd (intermédiaire commercial, annuaire numérique et obligation d'inscription). Les relances au GUCE et à CinetPay pour la voie entreprenant OHADA avaient déjà été envoyées.
+
+**7. Modèle commercial envisagé** : avant régularisation : démonstrations et mise en relation gratuite. Après déclaration et autorisations applicables : offre simple de *recherche et qualification de fournisseurs sur demande* avec prix, portée et livrables écrits. Les clients et fournisseurs se paient directement ; la plateforme ne gère pas leur argent. La rémunération des deux côtés d'une opération doit être explicitement divulguée.
+
 ## A. Accompli et testé
 
 - GitHub Pages : déploiement automatisé et vérification HTTPS du site, de l'espace client et des éléments PWA.
