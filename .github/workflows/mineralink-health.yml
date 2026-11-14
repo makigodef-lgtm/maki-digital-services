@@ -1,5 +1,10 @@
 name: MineraLink daily public availability check
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'mineralink/espace-client.html'
+      - '.github/workflows/mineralink-health.yml'
   schedule:
     - cron: '15 5 * * *'
   workflow_dispatch:
@@ -13,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
       - name: Confirm HTTPS and required install assets
         shell: bash
         run: |
@@ -23,3 +29,11 @@ jobs:
             curl --fail --location --silent --show-error --retry 3 --retry-delay 3 --max-time 15 "${base}${page}" >/dev/null
           done
           echo "All public MineraLink URLs returned HTTP success"
+      - name: Verify Supabase Auth API responds (no user account required)
+        shell: bash
+        run: |
+          set -euo pipefail
+          key="$(python3 -c 'from pathlib import Path; import re; s=Path("mineralink/espace-client.html").read_text(); m=re.search(r"sb_publishable_[A-Za-z0-9_-]+",s); assert m, "No public publishable key"; print(m.group())')"
+          curl --fail --location --silent --show-error --retry 3 --retry-delay 3 --max-time 20 -H "apikey: ${key}" "https://wzxollkidilsomrjqjja.supabase.co/auth/v1/settings" > /tmp/mineralink-auth-status.json
+          python3 -c 'import json; j=json.load(open("/tmp/mineralink-auth-status.json")); assert isinstance(j,dict); print("Supabase authentication API is reachable")'
+
