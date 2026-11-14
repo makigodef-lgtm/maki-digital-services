@@ -1,0 +1,35 @@
+name: Materialize MineraLink PWA PNG icons
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/materialize-pwa-icons.yml'
+      - 'mineralink/generate_icons.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate both required PWA icons
+        run: python3 mineralink/generate_icons.py mineralink/assets
+      - name: Save PNG icons in the source branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mineralink/assets/icon-192.png mineralink/assets/icon-512.png
+          if git diff --cached --quiet; then
+            echo "PNG icons already stored on main"
+          else
+            git commit -m "MineraLink: publish required installable PWA icons"
+            git push origin HEAD:main
+          fi
