@@ -6,6 +6,9 @@ on:
       - 'index.html'
       - 'en.html'
       - 'mineralink/**'
+      # Exclude research/admin documentation that does not change the public site.
+      - '!mineralink/**/*.md'
+      - '!mineralink/**/*.sql'
       - '.github/workflows/publish-pages.yml'
   workflow_dispatch:
 
@@ -40,12 +43,15 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: _site
       - name: Allow GitHub artifact indexing to settle
         run: sleep 10
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Verify public MineraLink pages over HTTPS
         run: |
           base="https://makigodef-lgtm.github.io/maki-digital-services/mineralink/"
