@@ -58,16 +58,16 @@ create function public.is_org_owner(org uuid) returns boolean language sql stabl
 $$;
 revoke all on function public.is_org_member(uuid),public.is_org_owner(uuid) from public;
 grant execute on function public.is_org_member(uuid),public.is_org_owner(uuid) to authenticated;
-alter table public.organizations enable row level security;
+create function public.is_invited(request_id uuid) returns boolean language sql stable security definer set search_path='' as $ select exists(select 1 from public.invitations i join public.memberships m on m.organization_id=i.supplier_org_id where i.rfq_id=request_id and m.user_id=(select auth.uid())) $;\nrevoke all on function public.is_invited(uuid) from public;\ngrant execute on function public.is_invited(uuid) to authenticated;\nalter table public.organizations enable row level security;
 alter table public.memberships enable row level security;
 alter table public.rfqs enable row level security;
 alter table public.invitations enable row level security;
 alter table public.quotes enable row level security;
 create policy org_read on public.organizations for select to authenticated using (public.is_org_member(id));
 create policy membership_read on public.memberships for select to authenticated using (public.is_org_member(organization_id));
-create policy rfq_read on public.rfqs for select to authenticated using (public.is_org_member(buyer_org_id) or exists(select 1 from public.invitations i where i.rfq_id=id and public.is_org_member(i.supplier_org_id)));
+create policy rfq_read on public.rfqs for select to authenticated using (public.is_org_member(buyer_org_id) or public.is_invited(id));
 create policy rfq_create on public.rfqs for insert to authenticated with check (public.is_org_member(buyer_org_id) and created_by=(select auth.uid()) and status='draft');
-create policy invitation_read on public.invitations for select to authenticated using (exists(select 1 from public.rfqs r where r.id=rfq_id and public.is_org_member(r.buyer_org_id)) or public.is_org_member(supplier_org_id));
+create policy invitation_read on public.invitations for select to authenticated using (public.is_org_member(supplier_org_id));
 create policy quote_read on public.quotes for select to authenticated using (public.is_org_member(supplier_org_id) or exists(select 1 from public.rfqs r where r.id=rfq_id and public.is_org_member(r.buyer_org_id)));
 create policy quote_create on public.quotes for insert to authenticated with check (public.is_org_member(supplier_org_id) and created_by=(select auth.uid()) and status='submitted' and exists(select 1 from public.rfqs r where r.id=rfq_id and r.status in ('submitted','in_review','quoted')));
 -- All mutations not explicitly permitted above are denied. Organization creation,
