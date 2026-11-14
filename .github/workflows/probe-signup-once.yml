@@ -1,0 +1,45 @@
+name: MineraLink single real sign-up delivery probe
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/probe-signup-once.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: One controlled sign-up attempt using a Gmail alias owned by the project operator
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync} from 'node:fs';
+          import {randomBytes} from 'node:crypto';
+          const html=readFileSync('mineralink/espace-client.html','utf8');
+          const url=html.match(/https:\/\/([a-z0-9-]+)\.supabase\.co/)?.[0];
+          const key=html.match(/sb_publishable_[A-Za-z0-9_-]+/)?.[0];
+          if(!url||!key)throw Error('Public Auth configuration missing');
+          const email='makigodef+mineralink-auth-test-'+Date.now()+'@gmail.com';
+          const password=randomBytes(32).toString('base64url');
+          const abort=AbortSignal.timeout(25000);
+          const response=await fetch(url+'/auth/v1/signup',{
+            method:'POST',signal:abort,
+            headers:{'Content-Type':'application/json','apikey':key,'Authorization':'Bearer '+key},
+            body:JSON.stringify({email,password, data:{purpose:'automated signup delivery check'}})
+          });
+          const data=await response.json().catch(()=>({}));
+          const result={
+            http_status:response.status,
+            auth_code:data.code||data.error_code||null,
+            message:String(data.msg||data.message||data.error_description||'').slice(0,230),
+            account_row_created:!!data.user?.id,
+            confirmation_required:data.user?.confirmation_sent_at?true:false,
+            session_issued:!!data.access_token
+          };
+          console.log('LIVE SIGNUP PROBE',JSON.stringify(result));
+          console.log('One attempt only; test password not stored or printed.');
+          if(response.status>=500) process.exitCode=1;
+          JS
