@@ -2,6 +2,14 @@
 
 **Mode actuel : pilote technique et prospection sans encaissement en ligne.** Le site est publié et l'installation PWA ne demande aucun compte développeur payant. L'utilisateur ne doit pas être invité à effectuer des paiements via un prestataire tant que les autorisations ne sont pas accordées.
 
+## Dernière vérification technique du 14 novembre 2026
+
+- Répertoire fournisseur à adhésion volontaire créé dans Supabase et relié à l'espace client ; politiques d'accès testées (consultation, retrait, refus de modifier une fiche par un tiers).
+- Deux icônes PNG PWA (192 et 512 pixels) désormais versionnées dans GitHub, après correction d'une erreur HTTP 404 détectée.
+- **Contrôle final réussi dans GitHub Actions : pages publiques, icônes et API d'authentification Supabase accessibles.** Ce contrôle ne prouve pas qu'une inscription avec courriel réel et une confirmation fonctionnent de bout en bout.
+- Courriels transmis au GUCE pour retrouver le dossier et clarifier les frais de 30/40 USD ; à la Chambre des Mines pour obtenir le lien de réunion du 16 novembre. Réponses non encore constatées.
+- Aucun coût d'activation ou de prestataire de paiement engagé par ces modifications.
+
 ## A. Accompli et testé
 
 - GitHub Pages : déploiement automatisé et vérification HTTPS du site, de l'espace client et des éléments PWA.
