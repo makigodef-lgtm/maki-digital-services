@@ -44,3 +44,10 @@ jobs:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify public MineraLink pages over HTTPS
+        run: |
+          base="https://makigodef-lgtm.github.io/maki-digital-services/mineralink/"
+          for page in "" "espace-client.html" "commencer.html"; do
+            curl --fail --location --silent --show-error --retry 6 --retry-delay 3 --retry-all-errors "${base}${page}" >/dev/null
+          done
+          echo "Public MineraLink pages respond over HTTPS"
