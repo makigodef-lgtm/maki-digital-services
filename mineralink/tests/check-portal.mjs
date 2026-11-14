@@ -46,6 +46,10 @@ for (const [name, html] of [['index.html', home], ['commencer.html', gettingStar
   for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
     if (!href || /^(?:https?:|mailto:|tel:|#)/.test(href)) continue;
     const pagePath = href.split(/[?#]/)[0];
+    if (['assets/icon-192.png','assets/icon-512.png'].includes(pagePath)) {
+      assert.ok(existsSync(join(root, 'generate_icons.py')), 'PWA PNG icon generator missing');
+      continue;
+    }
     assert.ok(existsSync(join(root, dirname(name), pagePath)), name + ' links to missing page: ' + pagePath);
   }
 }
