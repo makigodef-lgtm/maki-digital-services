@@ -11,6 +11,9 @@ const gettingStarted = read('commencer.html');
 const privacy = read('confidentialite.html');
 const terms = read('conditions-utilisation.html');
 const installer = read('installer.html');
+const campaign = read('campagne.html');
+const buyerForm = read('demande-rfq.html');
+const supplierForm = read('fournisseurs.html');
 const worker = read('sw.js');
 const manifest = JSON.parse(read('manifest.webmanifest'));
 assert.ok(manifest.display === 'standalone', 'Installable PWA must use standalone display');
@@ -23,6 +26,10 @@ assert.ok(privacy.includes('Supabase Auth') && privacy.includes('demandes de dev
 assert.ok(terms.includes('MineraLink RDC'), 'Missing service conditions');
 assert.ok(installer.includes('Windows, macOS ou Linux') && installer.includes('iPhone et iPad'), 'Device installation guides incomplete');
 assert.ok(worker.includes("url.pathname.endsWith('/espace-client.html')"), 'Private account pages must not be cached by service worker');
+assert.ok(worker.includes('./campagne.html'), 'Offline campaign landing must be listed');
+assert.ok(campaign.includes('id="whatsapp"') && campaign.includes('id="linkedin"') && campaign.includes('id="buyer"') && campaign.includes('id="supplier"'), 'Campaign social shares and funnels missing');
+assert.ok(buyerForm.includes('Origine de la prise de contact') && supplierForm.includes('Origine de la prise de contact'), 'Voluntary email campaign attribution missing');
+assert.ok(campaign.includes('Aucune transaction') && campaign.includes('Aucune') && campaign.includes('commissions'), 'Pilot legal status missing from campaign');
 
 const requiredIds = [
   'authForm','signup','orgForm','rfqForm','inviteForm',
@@ -42,7 +49,7 @@ assert.ok(scriptMatch, 'Missing module script');
 const moduleWithoutImport = scriptMatch[1].replace(/^\s*import\s+\{createClient\}[^;]*;\s*/, '');
 new Script(moduleWithoutImport, {filename: 'espace-client.inline.js'});
 
-for (const [name, html] of [['index.html', home], ['commencer.html', gettingStarted], ['espace-client.html', portal], ['installer.html', installer], ['confidentialite.html', privacy], ['conditions-utilisation.html', terms]]) {
+for (const [name, html] of [['index.html', home], ['campagne.html', campaign], ['commencer.html', gettingStarted], ['espace-client.html', portal], ['installer.html', installer], ['confidentialite.html', privacy], ['conditions-utilisation.html', terms]]) {
   for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
     if (!href || /^(?:https?:|mailto:|tel:|#)/.test(href)) continue;
     const pagePath = href.split(/[?#]/)[0];
@@ -54,5 +61,6 @@ for (const [name, html] of [['index.html', home], ['commencer.html', gettingStar
   }
 }
 assert.ok(home.includes('href="espace-client.html"'), 'Homepage must link to portal');
+assert.ok(home.includes('href="campagne.html"'), 'Homepage campaign navigation missing');
 assert.ok(gettingStarted.includes('href="espace-client.html"'), 'Getting-started page must link to portal');
 console.log('MineraLink smoke checks passed: PWA, client JS, workflow, privacy, terms, installability, internal links.');
