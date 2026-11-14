@@ -10,6 +10,20 @@
 - Courriels transmis au GUCE pour retrouver le dossier et clarifier les frais de 30/40 USD ; à la Chambre des Mines pour obtenir le lien de réunion du 16 novembre. Réponses non encore constatées.
 - Aucun coût d'activation ou de prestataire de paiement engagé par ces modifications.
 
+## Option juridique moins coûteuse à privilégier : statut d'« entreprenant »
+
+**Vérification documentaire du 14 novembre 2026 : cette voie est distincte de la création d'une société ou d'une immatriculation classique d'établissement.**
+
+- **OHADA, Acte uniforme portant sur le droit commercial général, article 62** : l'entreprenant peut déclarer son activité **sans frais** au greffe ou à l'organe national compétent ; il reçoit un numéro de déclaration et doit l'indiquer sur ses documents professionnels avec « Entreprenant dispensé d'immatriculation ». L'exercice commence après l'obtention du numéro, non au simple envoi du formulaire. [Texte OHADA hébergé par l'ANAPI](https://anapi.cd/wp-content/uploads/2025/09/ACTE-UNIFORME-REVISE-PORTANT-SUR-LE-DROIT-COMMERCIAL-GENERAL.pdf).
+- **RDC, ordonnance-loi n° 22/030 du 8 septembre 2022**, article 63 : statut de l'entreprenant reconnu et régi par l'OHADA. [Texte de l'ordonnance-loi](https://mail.leganet.cd/Legislation/Droit%20economique/Societes/OL.22.30.08.09.2022.html).
+- **Commission nationale OHADA de la RDC**, note d'orientation CNO/07/2014, point 15, page 4 : demande et délivrance gratuite de numéro de déclaration possibles depuis septembre 2012. [Note officielle](https://www.ohada.com/uploads/actualite/2299/Note-d-orientations-07-CNO-RDC.pdf).
+- **Agence congolaise de presse, 18 septembre 2025** : un représentant du Guichet unique explique que le statut d'entreprenant permet d'accéder gratuitement à la formalisation. [Article ACP](https://acp.cd/business/rdc-les-entrepreneurs-a-mobilite-reduite-sensibilises-a-la-formation-entrepreneuriale/).
+- **CinetPay** : les [conditions générales](https://cinetpay.com/legal/cgu-services) contiennent une annexe « personnes physiques » fondée initialement sur une pièce d'identité et des plafonds indiqués en FCFA. Toutefois, le support commercial CinetPay a explicitement exigé une structure légalement reconnue pour l'activation en RDC. **L'application des conditions d'identité seule et l'acceptation d'une déclaration d'entreprenant OHADA en zone USD/CDF doivent donc être confirmées par écrit.** Une demande ciblée a été envoyée à hello@cinetpay.com le 14 novembre 2026. Pas d'activation marchande présumée.
+- **Qualification réelle de l'activité** : OHADA article 3 qualifie notamment la commission et le courtage d'actes commerciaux. Une plateforme facturant habituellement une commission exerce donc une activité économique même sans achat-revente de marchandises.
+- **Code du numérique RDC**, articles 13, 17-18, 48, 52 et 186 : les régimes applicables aux applications de startups, plateformes, informations légales et données personnelles doivent être vérifiés séparément. Une déclaration OHADA ne vaut pas automatiquement agrément numérique ni régularisation des données personnelles. [Code du numérique](https://droitnumerique.cd/wp-content/uploads/2024/08/Code-du-numerique-I-RD-Congo.pdf).
+
+**Conduite pratique sans dépense** : maintenir l'application comme démonstration et moyen de prospection ; demander au GUCE l'orientation vers la déclaration gratuite « entreprenant » au lieu d'une immatriculation classique ; ne commencer des facturations régulières qu'après réception de la preuve de statut et vérification des obligations fiscales et numériques ; ne pas centraliser de fonds destinés aux entreprises partenaires. Aucun emprunt de RCCM ni faux numéro.
+
 ## A. Accompli et testé
 
 - GitHub Pages : déploiement automatisé et vérification HTTPS du site, de l'espace client et des éléments PWA.
