@@ -50,15 +50,18 @@ create index on public.memberships(user_id);
 create index on public.rfqs(buyer_org_id,status);
 create index on public.invitations(supplier_org_id);
 create index on public.quotes(rfq_id);
-create function public.is_org_member(org uuid) returns boolean language sql stable security definer set search_path='' as $$
+create function public.is_org_member(org uuid) returns boolean language sql stable security definer set search_path='' as $fn$
  select exists(select 1 from public.memberships m where m.organization_id=org and m.user_id=(select auth.uid()))
-$$;
-create function public.is_org_owner(org uuid) returns boolean language sql stable security definer set search_path='' as $$
+$fn$;
+create function public.is_org_owner(org uuid) returns boolean language sql stable security definer set search_path='' as $fn$
  select exists(select 1 from public.memberships m where m.organization_id=org and m.user_id=(select auth.uid()) and m.role='owner')
-$$;
+$fn$;
 revoke all on function public.is_org_member(uuid),public.is_org_owner(uuid) from public;
 grant execute on function public.is_org_member(uuid),public.is_org_owner(uuid) to authenticated;
-create function public.is_invited(request_id uuid) returns boolean language sql stable security definer set search_path='' as $ select exists(select 1 from public.invitations i join public.memberships m on m.organization_id=i.supplier_org_id where i.rfq_id=request_id and m.user_id=(select auth.uid())) $;\nrevoke all on function public.is_invited(uuid) from public;\ngrant execute on function public.is_invited(uuid) to authenticated;\nalter table public.organizations enable row level security;
+create function public.is_invited(request_id uuid) returns boolean language sql stable security definer set search_path='' as $fn$ select exists(select 1 from public.invitations i join public.memberships m on m.organization_id=i.supplier_org_id where i.rfq_id=request_id and m.user_id=(select auth.uid())) $fn$;
+revoke all on function public.is_invited(uuid) from public;
+grant execute on function public.is_invited(uuid) to authenticated;
+alter table public.organizations enable row level security;
 alter table public.memberships enable row level security;
 alter table public.rfqs enable row level security;
 alter table public.invitations enable row level security;
@@ -73,3 +76,7 @@ create policy quote_create on public.quotes for insert to authenticated with che
 -- All mutations not explicitly permitted above are denied. Organization creation,
 -- owner enrollment, verification, invitations, RFQ submission and status changes
 -- MUST use audited server-side functions with role checks, not client-side service keys.
+
+revoke all on table public.organizations,public.memberships,public.rfqs,public.invitations,public.quotes from anon,authenticated;
+grant select on table public.organizations,public.memberships,public.rfqs,public.invitations,public.quotes to authenticated;
+grant insert on table public.rfqs,public.quotes to authenticated;
