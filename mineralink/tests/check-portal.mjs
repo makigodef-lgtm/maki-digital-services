@@ -26,7 +26,7 @@ assert.ok(worker.includes("url.pathname.endsWith('/espace-client.html')"), 'Priv
 
 const requiredIds = [
   'authForm','signup','orgForm','rfqForm','inviteForm',
-  'inviteRfq','supplierId','quoteForm','rfqList','orgList','msg'
+  'inviteRfq','supplierId','quoteForm','rfqList','orgList','msg','directoryForm','directoryOrg','directorySearch','directoryList','directoryConsent'
 ];
 for (const id of requiredIds) assert.ok(portal.includes('id="' + id + '"'), 'Missing UI control: ' + id);
 for (const op of [
