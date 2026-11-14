@@ -1,14 +1,27 @@
-# MineraLink RDC — page pilote de prospection
-La page `index.html` de ce dossier est une **vitrine statique bilingue** (français/anglais). Elle présente les services en cours d'étude et fournit un formulaire qui prépare un courriel à envoyer depuis l'application de messagerie du prospect.
+# MineraLink RDC — vitrine et espace client pilote
 
-- Pas de base de données, pas de collecte serveur, pas de paiement intégré.
-- Pas de vente directe de minerais ni de revendication d'agrément.
-- Contact public : makigodef@gmail.com (déjà publié sur le site AFICN de ce dépôt).
-- Ne pas confondre cette vitrine avec le backend Node.js/SQLite MineraLink 0.5, qui n'est pas hébergé ici.
+- `index.html` : vitrine bilingue et accès aux services.
+- `espace-client.html` : espace Supabase (authentification, enregistrement d'entreprises, demandes de devis, invitations, propositions).
+- `demande-rfq.html` : préparation d'une demande sans compte, avec transfert volontaire par e-mail. Ce formulaire **n'enregistre pas** les données dans Supabase.
+- `commencer.html` : instructions pour les acheteurs et fournisseurs.
+- Aucune solution d'encaissement, aucun agrément commercial et aucun fournisseur certifié ne sont confirmés.
 
-## Mise en ligne gratuite
-Depuis le dépôt GitHub : **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**. Ce paramétrage nécessite la session GitHub du titulaire. Préserver les fichiers AFICN existants à la racine.
+## Hébergement et données
 
-Adresse prévisible **une fois Pages activé et le déploiement réussi** : `https://makigodef-lgtm.github.io/maki-digital-services/mineralink/`. Ne pas diffuser cette URL comme site actif avant de l'avoir ouverte et vérifiée.
+Le site est publié par GitHub Actions / GitHub Pages. L'adresse à vérifier depuis un navigateur externe est :
+https://makigodef-lgtm.github.io/maki-digital-services/mineralink/
 
-L'hébergement GitHub Pages est statique. Il ne peut ni faire tourner `server.js` ni recevoir automatiquement des paiements. Les frais de Google Play et Apple App Store sont distincts et ne sont pas requis pour cette vitrine.
+La base PostgreSQL Supabase `mineralink-rdc` contient cinq tables : `organizations`, `memberships`, `rfqs`, `invitations`, `quotes`. La sécurité RLS est activée. L'inscription dépend des confirmations e-mail et des URL autorisées dans les paramètres Auth du projet.
+
+Le 14 novembre 2026, un scénario SQL simulant deux comptes (acheteur et fournisseur), une demande, une invitation et un devis a réussi. La transaction a été annulée pour ne laisser aucune donnée fictive. **Cet essai ne remplace pas un test navigateur avec deux adresses email confirmées.**
+
+## Parcours complet
+
+1. L'acheteur crée et confirme son compte, puis enregistre son entreprise.
+2. Le fournisseur crée et confirme son compte, puis transmet l'identifiant de son entreprise à l'acheteur.
+3. L'acheteur soumet une demande et invite le fournisseur.
+4. Le fournisseur consulte la demande et enregistre un devis.
+5. L'acheteur consulte les devis dans son espace.
+6. Les parties négocient séparément ; aucun paiement marchand réel n'est activé.
+
+Le projet se limite à la mise en relation et au sourcing industriel. Ne jamais annoncer un agrément qui n'a pas été obtenu. GitHub Pages est statique ; Supabase héberge les données, pas les transactions financières.
