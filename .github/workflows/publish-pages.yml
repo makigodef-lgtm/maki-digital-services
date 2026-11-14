@@ -41,6 +41,8 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+      - name: Allow GitHub artifact indexing to settle
+        run: sleep 10
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v4
