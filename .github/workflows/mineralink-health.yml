@@ -1,0 +1,25 @@
+name: MineraLink daily public availability check
+on:
+  schedule:
+    - cron: '15 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-pages:
+    if: ${{ github.event.repository.private == false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Confirm HTTPS and required install assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://makigodef-lgtm.github.io/maki-digital-services/mineralink/"
+          for page in "" "espace-client.html" "installer.html" "commencer.html" "confidentialite.html" "conditions-utilisation.html" "manifest.webmanifest" "assets/icon-192.png" "assets/icon-512.png"; do
+            echo "Checking ${base}${page}"
+            curl --fail --location --silent --show-error --retry 3 --retry-delay 3 --max-time 15 "${base}${page}" >/dev/null
+          done
+          echo "All public MineraLink URLs returned HTTP success"
