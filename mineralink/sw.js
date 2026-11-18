@@ -1,5 +1,5 @@
 /* MineraLink RDC: public pages only. Network-first navigation; offline fallback. */
-const CACHE='mineralink-public-v12';
+const CACHE='mineralink-public-v13';
 const ASSETS=['./','./index.html','./commencer.html','./demande-rfq.html','./campagne.html','./opportunites.html','./fournisseurs.html','./comparateur.html','./prequalification.html','./confidentialite.html','./conditions-utilisation.html','./installer.html','./offres.html','./offres-en.html','./assets/icon-192.png','./assets/icon-512.png','./manifest.webmanifest','./assets/icon.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(async cache=>{await Promise.allSettled(ASSETS.map(url=>cache.add(url)));}).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('mineralink-public-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
